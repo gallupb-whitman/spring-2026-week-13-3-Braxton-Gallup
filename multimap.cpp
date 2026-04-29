@@ -1,6 +1,8 @@
 #include <iostream>
 #include <map>
 #include <string>
+
+using namespace std;
 // Fork this repo
 // Read: https://www.geeksforgeeks.org/cpp/multimap-associative-containers-the-c-standard-template-library-stl/
 // If you have question about the code, please ask to the TA
@@ -16,13 +18,23 @@
 
 int main() {
     // Create a multimap where the key is student ID (int) and value is student name (string)
-    
+    multimap<int, string> mm;
 
     // Insert students with their IDs into the multimap
-   
+   mm.insert({101, "Bert"});
+   mm.insert({102, "Sandy"});
+   mm.insert({103, "James"});
+   mm.insert({103, "Molly"});
+   mm.insert({104, "Sam"});
 
     // Display all students sorted by their student IDs
-   
+   for(auto x: mm)
+        cout << x.first << ": " << x.second << endl;
 
     return 0;
 }
+
+// Comment: The easiest part of this exercise was programming the insertion of each ID number and student name, as
+// once I have the function written, it can be easily repeated. The most difficult part of this was understanding
+// that I needed to access namespace std for the code to work. Otherwise, the program wouldn't understand what 
+// multimap does. 
